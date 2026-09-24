@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Brutal Brain Maze</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="gameUI">
+        <div class="header">
+            <div>LEVEL: <span id="ui-level">1</span></div>
+            <div>TIME: <span id="ui-time">00:00</span></div>
+            <div>MOVES: <span id="ui-moves">0</span></div>
+        </div>
+        
+        <div id="debugPanel" class="hidden">
+            Diff: <span id="ui-diff">0</span> | Path: <span id="ui-path">0</span> | DeadEnds: <span id="ui-deadends">0</span>
+        </div>
+    </div>
+
+    <!-- Main Game Canvas -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Overlay: Level Complete -->
+    <div id="completionOverlay" class="overlay hidden">
+        <h1 class="neon-text">LEVEL COMPLETE</h1>
+        <div class="stats-box">
+            <p>Level: <span id="out-level"></span></p>
+            <p>Difficulty: <span id="out-diff"></span>/100</p>
+            <p>Time: <span id="out-time"></span></p>
+            <p>Moves: <span id="out-moves"></span></p>
+            <p class="xp-text">XP Earned: <span id="out-xp"></span></p>
+        </div>
+        <button id="btnNextLevel" class="btn">NEXT LEVEL</button>
+        <button id="btnReplay" class="btn secondary">REPLAY</button>
+    </div>
+
+    <!-- Overlay: Quiz Lock (Future Adapter) -->
+    <div id="quizOverlay" class="overlay hidden">
+        <h1 class="alert-text">QUIZ LOCK</h1>
+        <p>Answer 10 questions to continue.</p>
+        <button id="btnMockQuizPass" class="btn">[MOCK] PASS QUIZ</button>
+    </div>
+
+    <!-- Instructions Overlay -->
+    <div id="startOverlay" class="overlay">
+        <h1 class="neon-text">BRUTAL BRAIN MAZE</h1>
+        <p>Drag anywhere to move (Virtual Joystick)<br>or use Arrow Keys.</p>
+        <button id="btnStart" class="btn">START DEMO</button>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
